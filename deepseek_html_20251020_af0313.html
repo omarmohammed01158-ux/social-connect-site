@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Connect - تواصل اجتماعي</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <!-- شاشة التسجيل -->
+    <div id="authScreen" class="screen">
+        <div class="auth-container">
+            <h1>🚀 Social Connect</h1>
+            <p>منصة تواصل اجتماعي آمنة</p>
+            <button id="googleLogin" class="google-btn">
+                <span>📧 التسجيل بحساب Google</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- الشاشة الرئيسية -->
+    <div id="mainScreen" class="screen hidden">
+        <!-- الهيدر -->
+        <header class="header">
+            <div class="user-info">
+                <img id="userAvatar" src="" alt="الصورة الشخصية" class="avatar">
+                <span id="userName">المستخدم</span>
+            </div>
+            <button id="logoutBtn" class="logout-btn">🚪 تسجيل خروج</button>
+        </header>
+
+        <!-- البحث -->
+        <div class="search-section">
+            <input type="email" id="searchInput" placeholder="🔍 ابحث عن مستخدم بالإيميل...">
+            <button id="searchBtn">بحث</button>
+        </div>
+
+        <!-- قائمة المحادثات -->
+        <div class="conversations-list">
+            <h3>💬 محادثاتي</h3>
+            <div id="conversationsContainer">
+                <div class="no-conversations">لا توجد محادثات بعد</div>
+            </div>
+        </div>
+
+        <!-- نافذة المحادثة -->
+        <div id="chatModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="chatWithUser">محادثة مع</h3>
+                    <button id="closeChat">✕</button>
+                </div>
+                <div id="messagesContainer" class="messages-container">
+                    <div class="no-messages">لا توجد رسائل بعد</div>
+                </div>
+                <div class="message-input">
+                    <input type="text" id="messageInput" placeholder="💬 اكتب رسالتك هنا...">
+                    <button id="sendMessageBtn">إرسال</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
